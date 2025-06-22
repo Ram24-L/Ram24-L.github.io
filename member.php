@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" dir="ltr" data-bs-theme="auto">
 <head>
@@ -69,6 +70,46 @@
     <link rel="canonical" href="your_canonical_url_goes_here">
 
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // ⚠️ mencegah form reload halaman
+
+            const formData = new FormData(form);
+            const statusDiv = document.getElementById("messageStatus");
+
+            fetch("proses.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.innerHTML = `
+                        <div class="alert alert-success" role="alert">
+                            ✅ Data berhasil dikirim!
+                        </div>`;
+                    form.reset();
+                } else {
+                    statusDiv.innerHTML = `
+                        <div class="alert alert-danger" role="alert">
+                            ❌ Gagal mengirim data.
+                        </div>`;
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = `
+                    <div class="alert alert-danger" role="alert">
+                        ⚠️ Error: ${error.message}
+                    </div>`;
+            });
+        });
+    }
+});
+</script>
 <body>
 
 
@@ -225,9 +266,7 @@
 	        </div>
 	    </nav>
 	</header>
-
-
-
+    <!-- header body -->
 	<!-- header body -->
 	<div class="overflow-hidden py-9 py-xl-10 position-relative">
 	   	<img src="./assets/img/bg/bg1 (2).jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
@@ -240,321 +279,61 @@
 		    <div class="container h-100 d-flex align-items-center">
                 <div class="max-w-2xl mx-auto mx-xl-0 text-center text-xl-start">
                     <h1 class="m-0 mt-7 home-text tracking-tight text-6xl fw-bold" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
-                        About us
+                        Data Member
                     </h1>
                     <p class="m-0 mt-4 home-text text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
-                        The History of Radar Community
+                        Berikut adalah data member yang telah mensubmit form pendaftaran.
                     </p>
                 </div>
 		    </div>
 	    </div>
 	</div>	
+<div class="container overflow-hidden py-9 py-xl-8 position-relative">
+    <h2 class="mb-4 text-center">Data Pendaftar</h2>
+
+    <table class="table table-bordered bg-secondary">
+        <thead class="bg-secondary text-center text-body-secondary" >
+            <tr class="text-body-secondary bg-body-tertiary">
+                <th>No</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Province</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // koneksi database
+        $conn = mysqli_connect("localhost", "root", "", "radar");
+
+        if (!$conn) {
+            die("Koneksi gagal: " . mysqli_connect_error());
+        }
+            $result = mysqli_query($conn, "SELECT * FROM users");
+            $no = 1;
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr class='text-body-secondary'>";
+                echo "<td class='text-center'>{$no}</td>";
+                echo "<td>{$row['full_name']}</td>";
+                echo "<td>{$row['email']}</td>";
+                echo "<td>{$row['phone']}</td>";
+                echo "<td class='text-center'>{$row['age']}</td>";
+                echo "<td class='text-center'>{$row['gender']}</td>";
+                echo "<td>{$row['province']}</td>";
+                echo "</tr>";
+                $no++;
+            }
+            ?>
+        </tbody>
+    </table>
 
 
 
-	<!-- About Us -->
-	<div class="overflow-hidden py-7 py-sm-8 py-xl-9">
-		<div class="container">
-			<div class="row gy-5 align-items-center justify-content-between">
-				<div class="col-12 col-xl-5 order-first order-xl-last">
-					<div class="mx-auto max-w-2xl">
-						<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
-							Radar Community 
-						</h2>
-						<p class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
-							Berawal dari Keresahan
-						</p>
-						<p class="m-0 mt-4 text-body-secondary text-lg leading-8 text-justify">
-							Radar Community lahir dari keresahan sekelompok anak muda terhadap semakin menurunnya kesadaran masyarakat akan pentingnya menjaga lingkungan dan nilai-nilai sosial di tengah era digital. Berawal dari diskusi kecil di sebuah warung kopi di Bandung pada tahun 2019, lima orang sahabat yang berasal dari latar belakang berbeda mahasiswa, pegiat sosial, programmer, pecinta alam, dan desainer grafis sepakat bahwa perubahan harus dimulai dari komitmen dari komunitas kecil yang solid dan peduli.
-						</p>
-						
-					</div>
-				</div>
 
-				<div class="col-12 col-xl-6">
-					<div class="mx-auto max-w-2xl">
-                        <div class="ratio ratio-4x3" data-aos-delay="200" data-aos="fade" data-aos-duration="3000">
-                            <img src="./assets/img/bg/bg5.jpg" class="object-fit-cover rounded-3" alt="presentation">
-                        </div>
-					</div>
-				</div>
-			</div>		
-		</div>
 	</div>
-
-
-
-	<!-- Our purpose our future Our Principles -->
-	<div class="overflow-hidden py-6 py-sm-7 py-xl-8">
-		<div class="container">
-			<div class="row gy-5 row-cols-1 row-cols-lg-3">
-				<div class="col" data-aos-delay="0" data-aos="fade-left" data-aos-duration="3000">
-					<div class="bg-primary rounded-3 d-inline-flex align-items-center justify-content-center home-text"
-	                     style="width: 2.5rem; height: 2.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="text-white bi bi-flag" viewBox="0 0 16 16"> <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/> </svg>
-                    </div>
-
-					<h3 class="m-0 mt-3 text-body-emphasis text-base leading-7 fw-semibold">
-						Our Purpose
-					</h3>
-					<p class="m-0 mt-2 text-body-secondary text-base leading-7 max-w-lg text-justify">
-						Radar Community didirikan dengan tujuan untuk meningkatkan kesadaran masyarakat terhadap isu-isu sosial, lingkungan, dan budaya melalui pendekatan kolaboratif dan aksi nyata. Komunitas ini menjadi ruang bagi anak muda dari berbagai latar belakang untuk bersatu, belajar, dan menciptakan solusi yang berdampak positif bagi lingkungan sekitar. Selain itu, Radar Community berkomitmen untuk memberdayakan komunitas lokal serta mendorong penggunaan teknologi dan data dalam merancang program-program yang berkelanjutan dan relevan dengan kebutuhan masyarakat.
-					</p>
-				</div>
-
-				<div class="col" data-aos-delay="100" data-aos="fade-left" data-aos-duration="3000">
-					<div class="bg-primary rounded-3 d-inline-flex align-items-center justify-content-center home-text"
-	                     style="width: 2.5rem; height: 2.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="text-white bi bi-binoculars" viewBox="0 0 16 16"> <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5z"/> </svg>
-                    </div>
-
-					<h3 class="m-0 mt-3 text-body-emphasis text-base leading-7 fw-semibold">
-						Our Future
-					</h3>
-					<p class="m-0 mt-2 text-body-secondary text-base leading-7 max-w-lg text-justify">
-						Visi Radar Community adalah menjadi jaringan komunitas progresif yang aktif membentuk ekosistem sosial dan lingkungan yang berkelanjutan, inklusif, dan kolaboratif. Radar Community membayangkan masa depan di mana setiap individu dan komunitas dapat terhubung, berdaya, dan bergerak bersama untuk menciptakan perubahan positif yang nyata dan berkelanjutan di berbagai daerah.
-					</p>
-				</div>
-
-				<div class="col" data-aos-delay="200" data-aos="fade-left" data-aos-duration="3000">
-					<div class="bg-primary rounded-3 d-inline-flex align-items-center justify-content-center home-text"
-	                     style="width: 2.5rem; height: 2.5rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"  class="text-white bi bi-award" viewBox="0 0 16 16"> <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"/> <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"/> </svg>
-                    </div>
-
-					<h3 class="m-0 mt-3 text-body-emphasis text-base leading-7 fw-semibold">
-						Our Principles
-					</h3>
-					<p class="m-0 mt-2 text-body-secondary text-base leading-7 max-w-lg text-justify">
-						Dalam menjalankan misinya, Radar Community berpegang pada prinsip-prinsip utama seperti kolaborasi di atas kompetisi, aksi yang berbasis data dan empati, inklusivitas tanpa batas, adaptif terhadap perubahan zaman, serta keberanian untuk bertindak nyata daripada sekadar berbicara. Prinsip-prinsip inilah yang menjadi fondasi dalam setiap kegiatan dan keputusan komunitas, memastikan bahwa setiap langkah yang diambil tetap relevan, berdampak, dan berpihak pada kebaikan bersama.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
- 	<!-- 2 landscap images -->
- 	<div class="overflow-hidden pt-6 pt-sm-7 pt-xl-8 pb-7 pb-sm-8 pb-xl-9">
-		<div class="container">
-			<div class="row gx-lg-4 row-cols-1 row-cols-lg-2">
-				<div class="col">
-                    <div class="ratio ratio-1x1" data-aos-delay="0" data-aos="fade" data-aos-duration="1000">
-                        <img src="./assets/img/bg/bg3.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
-                    </div>
-				</div>
-
-				<div class="col d-none d-lg-block">
-                    <div class="ratio ratio-1x1" data-aos-delay="100" data-aos="fade" data-aos-duration="1000">
-                        <img src="./assets/img/bg/bg4.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<!-- Our Story -->
-	<div class="overflow-hidden py-7 py-sm-8 py-xl-9 bg-body-tertiary">
-		<div class="container">
-			<div class="row gy-5 justify-content-between align-items-center">
-				<div class="col-12 col-xl-6 col-xxl-5">
-					<div class="mx-auto mx-xl-0 max-w-2xl">
-						<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
-							Why Radar
-						</h2>
-						<p class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
-							"RADAR"
-						</p>
-						<p class="m-0 mt-4 text-body text-lg leading-8">
-							<p class="m-0 mt-4 text-body-secondary text-lg leading-8 text-justify">
-							Nama “RADAR” dipilih dari penggalan nama dari setiap anggota kelompok, namun nama ini dapat mencerminkan sistem pemantau aktif terhadap isu-isu lingkungan, sosial, dan budaya di sekitar. Radar bukan hanya alat pendeteksi, tapi juga simbol kewaspadaan dan aksi cepat terhadap perubahan. Komunitas ini kemudian bergerak dengan pendekatan kolaboratif: menggabungkan teknologi, edukasi, dan aksi nyata.
-						</p>
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-xl-6">
-					<div class="mx-auto mx-xl-0 max-w-2xl">
-                        <div class="ratio ratio-4x3" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
-                            <img src="./assets/img/bg/bg2.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
-                        </div>
-	                </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Team -->
-<div class="overflow-hidden py-7 py-sm-8 py-xl-5 bg-body-secondary">
-    <div class="container">
-        <div class="mx-auto max-w-2xl text-center">
-            <h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
-                Meet Our Executives
-            </h2>
-            <p class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
-                RADAR TEAM
-            </p>
-            <p class="m-0 mt-4 text-body text-lg leading-8">
-                The team that led and brought us here
-            </p>
-        </div>
-
-        <div class="row row-cols-1 row-cols-xl-5 gy-5 gx-xl-4 mt-5 justify-content-center text-center">
-            <!-- Card 1 -->
-            <div class="col">
-                <div class="mx-auto" data-aos="fade" data-aos-duration="1000">
-                    <img src="./assets/img/team/ram.png" class="rounded-3 mx-auto" style="width: 200px; height: auto;" alt="Menanam Pohon" loading="lazy">
-                    <h3 class="mt-4 text-body-emphasis text-lg fw-semibold">Muhammad Ramdhan Maulana <br> 19241129</h3>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col">
-                <div class="mx-auto" data-aos-delay="100" data-aos="fade" data-aos-duration="1000">
-                    <img src="./assets/img/team/ar.png" class="rounded-3 mx-auto" style="width: 200px; height: auto;" alt="Ramdhan" loading="lazy">
-                    <h3 class="mt-4 text-body-emphasis text-lg fw-semibold">Muhammad Arya <br>Dwi Anggara <br>19241012</h3>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col">
-                <div class="mx-auto" data-aos-delay="200" data-aos="fade" data-aos-duration="1000">
-                    <img src="./assets/img/team/yas.png" class="rounded-3 mx-auto" style="width: 200px; height: auto;" alt="Konservasi" loading="lazy">
-                    <h3 class="mt-4 text-body-emphasis text-lg fw-semibold">Dias Havits <br>19241041</h3>
-    
-				</div>
-			</div>
-			 <div class="col">
-                <div class="mx-auto" data-aos-delay="200" data-aos="fade" data-aos-duration="1000">
-                    <img src="./assets/img/team/gengsi.png" class="rounded-3 mx-auto" style="width: 200px; height: auto;" alt="Konservasi" loading="lazy">
-                    <h3 class="mt-4 text-body-emphasis text-lg fw-semibold">Muhammad Athar Khairy Zhafran <br> 19241157</h3>
-				</div>
-			</div>
-			 <div class="col">
-                <div class="mx-auto" data-aos-delay="200" data-aos="fade" data-aos-duration="1000">
-                    <img src="./assets/img/team/rejav.png" class="rounded-3 mx-auto" style="width: 200px; height: auto;" alt="Konservasi" loading="lazy">
-                    <h3 class="mt-4 text-body-emphasis text-lg fw-semibold">Muhammad Rezafs Ilham <br>19241000</h3>
-				</div>
-			</div>
-		</div> 
-	</div>
-
-
-
-
-
-	<!-- big centered image -->
-	<div class="overflow-hidden py-6 py-sm-7 py-xl-8">
-		<div class="container">
-            <div class="ratio ratio-16x9">
-                <img src="./assets/img/bg/Save-Raja-Ampat.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
-            </div>
-		</div>
-	</div>
-
-
-	<!-- Client -->
-	<div class="overflow-hidden py-6 py-sm-7 py-xl-8 bg-body-tertiary">
-		<div class="container">
-			<div class="max-w-2xl">
-				<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
-					Our Partners
-				</h2>
-				<div class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
-					We're fortunate to have incredible Partners.
-				</div>
-			</div>
-
-			<div class="mt-4">
-				<div class="glide glideHighLinear">
-					<div class="glide__track" data-glide-el="track">
-						<ul class="glide__slides align-items-center">
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo1.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo2.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo3.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo4.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo5.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo6.png" class="img-fluid" alt="clients">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo7.png" class="img-fluid" alt="clients" width="70px">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo8.png" class="img-fluid" alt="clients" width="70px">
-								</div>
-							</li>
-							<li class="glide__slide">
-								<div class="p-5">
-									<img src="./assets/img/clients/logo9.png" class="img-fluid" alt="clients">
-								</div>
-							</li>		
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- Call to action -->
-	<div class="pb-9 pt-7">
-		<div class="container">
-			<div class="py-6 position-relative text-white rounded-3">
-				<img src="./assets/img/bg/bg10.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover rounded-3" loading="lazy" alt="Meeting">
-
-			   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark rounded-3"
-			        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
-			    </div>
-
-				<div class="px-6">
-					<div class="mx-auto max-w-2xl">
-						<h2 class="m-0 home-text tracking-tight text-4xl fw-bold text-center">
-							Sign in for Radar Community now
-						</h2>
-						<p class="m-0 mt-4 home-text text-lg leading-8 text-center">
-							Join and help our nature now
-						</p>
-						<div class="mt-4 pt-3 text-center">
-							<a href="index.php#myForm" class="btn btn-lg btn-primary home-text text-sm fw-semibold">
-								Join Now
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-		<footer class="overflow-hidden py-6 py-sm-7 py-xl-6 bg-body-tertiary">
+    <footer class="overflow py-6 py-sm-7 py-xl-6 bg-body-tertiary">
 	    
 	    <div class="container">
 

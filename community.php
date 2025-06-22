@@ -631,14 +631,14 @@
 
 				<div class="px-6">
 					<div class="mx-auto max-w-2xl">
-						<h2 class="m-0 tracking-tight text-4xl fw-bold text-center">
+						<h2 class="m-0 home-text tracking-tight text-4xl fw-bold text-center">
 							Sign in for Radar Community now
 						</h2>
-						<p class="m-0 mt-4 text-lg leading-8 text-center">
+						<p class="m-0 mt-4 home-text text-lg leading-8 text-center">
 							Join and help our nature now
 						</p>
 						<div class="mt-4 pt-3 text-center">
-							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold">
+							<a href="index.php#myForm" class="btn btn-lg btn-primary home-text text-sm fw-semibold">
 								Join Now
 							</a>
 						</div>

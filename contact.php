@@ -243,7 +243,7 @@
                         Contact us
                     </h1>
                     <p class="m-0 mt-4 home-text text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
-                        Let's chat about keeping your clothes looking their best.
+                        Jalin koneksi atau bertanya langsung dengan tim.
                     </p>
                 </div>
 		    </div>
@@ -338,7 +338,8 @@
                     </div>
 
                    <div class="mx-auto max-w-2xl mt-6">
-                        <form class="row g-4 needs-validation" id="myForm" novalidate>
+                        <form class="row g-4 needs-validation" id="myForm" novalidate action="send_email.php" method="POST">
+
                             <div class="col-md-6">
                                 <label for="nameForm" class="form-label text-sm">
                                     Full name
@@ -487,6 +488,46 @@
     <script src="./assets/php/contact/script.js"></script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Mencegah reload
+
+            const formData = new FormData(form);
+            const statusDiv = document.getElementById("yourMessageIsSent");
+
+            fetch("send_email.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.innerHTML = `
+                        <div class="alert alert-success mt-3" role="alert">
+                            ✅ Email berhasil dikirim!
+                        </div>`;
+                    form.reset();
+                } else {
+                    statusDiv.innerHTML = `
+                        <div class="alert alert-danger mt-3" role="alert">
+                            ❌ Gagal mengirim email. Coba lagi nanti.
+                        </div>`;
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = `
+                    <div class="alert alert-danger mt-3" role="alert">
+                        ⚠️ Terjadi kesalahan: ${error.message}
+                    </div>`;
+            });
+        });
+    }
+});
+</script>
 
 </body>
 </html>

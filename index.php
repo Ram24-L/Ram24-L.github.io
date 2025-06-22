@@ -723,138 +723,132 @@ Gambar saran: Ilustrasi voting, kampanye, atau anak muda membawa poster lingkung
                             Join us
                         </h2>
                         <p class="m-0 mt-2 text-body-emphasis text-3xl tracking-tight fw-bold">
-                            RADAR COMMUNITY <br> Looking for Volunteer
+                            RADAR COMMUNITY <br> Looking for Members
                         </p>
                     </div>
 
                     <div class="mx-auto max-w-2xl mt-6">
-                        <form class="row g-4 needs-validation" id="myForm" novalidate>
-                            <div class="col-md-6">
-                                <label for="nameForm" class="form-label text-sm">
-                                    Full name
-                                    <span class="text-danger-emphasis">*</span>
-                                </label>
-                                <input type="text" class="form-control form-control-sm" name="nameForm" id="nameForm" style="border: 1px solid gray;" required placeholder="Full Name">
-                                <div class="invalid-feedback text-xs">
-                                    Please enter your full name.
-                                </div>
-                            </div>
+				<form class="row g-4"  id="myForm" method="POST" action="proses.php" >
+				<div class="col-md-6">
+					<label for="nameForm" class="form-label text-sm">
+						Full name <span class="text-danger-emphasis">*</span>
+					</label>
+					<input type="text" class="form-control form-control-sm" name="nameForm" id="nameForm" style="border: 1px solid gray;" required placeholder="Full Name">
+					<div class="invalid-feedback text-xs">
+						Please enter your full name.
+					</div>
+				</div>
 
-                            <div class="col-md-6">
-                                <label for="emailForm" class="form-label text-sm">
-                                    Email address
-                                    <span class="text-danger-emphasis">*</span>
-                                </label>
-                                <input type="email" class="form-control form-control-sm" name="emailForm" id="emailForm"style="border: 1px solid gray;"  placeholder="Email">
-                                <div class="invalid-feedback text-xs">
-                                    Please enter your email address.
-                                </div>
-                            </div>
+				<div class="col-md-6">
+					<label for="emailForm" class="form-label text-sm">
+						Email address <span class="text-danger-emphasis">*</span>
+					</label>
+					<input type="email" class="form-control form-control-sm" name="emailForm" id="emailForm" style="border: 1px solid gray;" required placeholder="Email">
+					<div class="invalid-feedback text-xs">
+						Please enter your email address.
+					</div>
+				</div>
 
-                            <div class="col-md-6">
-                                <label for="phoneForm" class="form-label text-sm">
-                                    Phone number
-                                    <span class="text-danger-emphasis">*</span>
-                                </label>
-                                <input type="text" class="form-control form-control-sm" name="phoneForm" id="phoneForm" style="border: 1px solid gray;"  placeholder="Phone Number">
-                                <div class="invalid-feedback text-xs">
-                                    Please enter your phone number.
-                                </div>
-                            </div>
+				<div class="col-md-6">
+					<label for="phoneForm" class="form-label text-sm">
+						Phone number <span class="text-danger-emphasis">*</span>
+					</label>
+					<input type="text" class="form-control form-control-sm" name="phoneForm" id="phoneForm" style="border: 1px solid gray;" required placeholder="Phone Number">
+					<div class="invalid-feedback text-xs">
+						Please enter your phone number.
+					</div>
+				</div>
 
-                            <div class="col-md-6">
-                                <label for="subjectForm" class="form-label text-sm">
-                                    Age
-                                    <span class="text-danger-emphasis">*</span>
-                                </label>
-                                <input type="text" style="border: 1px solid gray;" class="form-control form-control-sm" name="subjectForm" id="subjectForm" required placeholder="Age">
-                                <div class="invalid-feedback text-xs">
-                                    Please enter a subject for your message.
-                                </div>
-                            </div>
-							  <div class="col-md-6">
-								<label for="genderForm" class="form-label text-sm">
-									Gender
-									<span class="text-danger-emphasis">*</span>
-								</label>
-								<select class="form-select form-select-sm" name="genderForm" id="genderForm" required style="border: 1px solid gray;">
-									<option value="" disabled selected>Select your gender</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-								</select>
-								<div class="invalid-feedback text-xs">
-									Please select your gender.
-								</div>
-							</div>
-							  <div class="col-md-6">
-						<label for="provinceForm" class="form-label text-sm">
-							Province
-							<span class="text-danger-emphasis">*</span>
+				<div class="col-md-6">
+					<label for="subjectForm" class="form-label text-sm">
+						Age <span class="text-danger-emphasis">*</span>
+					</label>
+					<input type="text" class="form-control form-control-sm" name="subjectForm" id="subjectForm" style="border: 1px solid gray;" required placeholder="Age">
+					<div class="invalid-feedback text-xs">
+						Please enter your age.
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<label for="genderForm" class="form-label text-sm">
+						Gender <span class="text-danger-emphasis">*</span>
+					</label>
+					<select class="form-select form-select-sm" name="genderForm" id="genderForm" required style="border: 1px solid gray;">
+						<option value="" disabled selected>Select your gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+					<div class="invalid-feedback text-xs">
+						Please select your gender.
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<label for="provinceForm" class="form-label text-sm">
+						Province <span class="text-danger-emphasis">*</span>
+					</label>
+					<select class="form-select form-select-sm" name="provinceForm" id="provinceForm" required style="border: 1px solid gray;">
+						<option value="" disabled selected>Province</option>
+						<option value="aceh">Aceh</option>
+						<option value="bali">Bali</option>
+						<option value="banten">Banten</option>
+						<option value="bengkulu">Bengkulu</option>
+						<option value="yogyakarta">DI Yogyakarta</option>
+						<option value="jakarta">DKI Jakarta</option>
+						<option value="gorontalo">Gorontalo</option>
+						<option value="jambi">Jambi</option>
+						<option value="jabar">Jawa Barat</option>
+						<option value="jateng">Jawa Tengah</option>
+						<option value="jatim">Jawa Timur</option>
+						<option value="kalbar">Kalimantan Barat</option>
+						<option value="kalsel">Kalimantan Selatan</option>
+						<option value="kaltim">Kalimantan Timur</option>
+						<option value="kalut">Kalimantan Utara</option>
+						<option value="kepbangka">Kepulauan Bangka Belitung</option>
+						<option value="kepri">Kepulauan Riau</option>
+						<option value="lampung">Lampung</option>
+						<option value="maluku">Maluku</option>
+						<option value="malut">Maluku Utara</option>
+						<option value="ntb">Nusa Tenggara Barat</option>
+						<option value="ntt">Nusa Tenggara Timur</option>
+						<option value="papua">Papua</option>
+						<option value="papuabarat">Papua Barat</option>
+						<option value="riau">Riau</option>
+						<option value="sulbar">Sulawesi Barat</option>
+						<option value="sulsel">Sulawesi Selatan</option>
+						<option value="sulteng">Sulawesi Tengah</option>
+						<option value="sultra">Sulawesi Tenggara</option>
+						<option value="sulut">Sulawesi Utara</option>
+						<option value="sumbar">Sumatera Barat</option>
+						<option value="sumsel">Sumatera Selatan</option>
+						<option value="sumut">Sumatera Utara</option>
+					</select>
+					<div class="invalid-feedback text-xs">
+						Please select your province.
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="form-check">
+						<input class="form-check-input" style="border: 1px solid gray;" type="checkbox" id="gridCheck" name="terms" required>
+						<label class="form-check-label text-sm" for="gridCheck">
+							I agree to the terms &amp; conditions and privacy policy <span class="text-danger-emphasis">*</span>
 						</label>
-						<select class="form-select form-select-sm" name="provinceForm" id="provinceForm" required style="border: 1px solid gray;">
-							<option value="" disabled selected>Province</option>
-							<option value="aceh">Aceh</option>
-							<option value="bali">Bali</option>
-							<option value="banten">Banten</option>
-							<option value="bengkulu">Bengkulu</option>
-							<option value="yogyakarta">DI Yogyakarta</option>
-							<option value="jakarta">DKI Jakarta</option>
-							<option value="gorontalo">Gorontalo</option>
-							<option value="jambi">Jambi</option>
-							<option value="jabar">Jawa Barat</option>
-							<option value="jateng">Jawa Tengah</option>
-							<option value="jatim">Jawa Timur</option>
-							<option value="kalbar">Kalimantan Barat</option>
-							<option value="kalsel">Kalimantan Selatan</option>
-							<option value="kaltim">Kalimantan Timur</option>
-							<option value="kalut">Kalimantan Utara</option>
-							<option value="kepbangka">Kepulauan Bangka Belitung</option>
-							<option value="kepri">Kepulauan Riau</option>
-							<option value="lampung">Lampung</option>
-							<option value="maluku">Maluku</option>
-							<option value="malut">Maluku Utara</option>
-							<option value="ntb">Nusa Tenggara Barat</option>
-							<option value="ntt">Nusa Tenggara Timur</option>
-							<option value="papua">Papua</option>
-							<option value="papuabarat">Papua Barat</option>
-							<option value="riau">Riau</option>
-							<option value="sulbar">Sulawesi Barat</option>
-							<option value="sulsel">Sulawesi Selatan</option>
-							<option value="sulteng">Sulawesi Tengah</option>
-							<option value="sultra">Sulawesi Tenggara</option>
-							<option value="sulut">Sulawesi Utara</option>
-							<option value="sumbar">Sumatera Barat</option>
-							<option value="sumsel">Sumatera Selatan</option>
-							<option value="sumut">Sumatera Utara</option>
-						</select>
 						<div class="invalid-feedback text-xs">
-							Please select your province.
+							Please agree to the terms &amp; conditions and privacy policy.
 						</div>
 					</div>
+				</div>
 
+				<div class="col-12 text-center pt-3">
+					<button type="submit" class="btn btn-lg btn-primary home-text text-sm fw-semibold" id="sendMessage">
+						Send message
+					</button>
+				</div>
 
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" style="border: 1px solid gray;" type="checkbox" id="gridCheck" required>
-                                    <label class="form-check-label text-sm" for="gridCheck">
-                                        I agree to the terms &amp; conditions and privacy policy
-                                        <span class="text-danger-emphasis">*</span>
-                                    </label>
-                                    <div class="invalid-feedback text-xs">
-                                        Please agree to the terms &amp; conditions and privacy policy.
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12 text-center pt-3">
-                                <button type="submit" class="btn btn-lg btn-primary home-text text-sm fw-semibold" id="sendMessage">
-                                    Send message
-                                </button>
-                            </div>
-
-                            <!-- Alert message  -->
-                            <div class="col-12" id="yourMessageIsSent"></div>
-                        </form>
+				<!-- Alert message  -->
+				<div class="col-12" id="messageStatus"></div>
+			</form>
                     </div>
                 </div>
 
@@ -929,6 +923,41 @@ Gambar saran: Ilustrasi voting, kampanye, atau anak muda membawa poster lingkung
     <script src="./assets/php/contact/script.js"></script>
 
 
+<script>
+document.getElementById("myForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // cegah reload halaman
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const statusDiv = document.getElementById("messageStatus");
+
+    fetch("proses.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json()) // pastikan proses.php kirim JSON
+    .then(data => {
+        if (data.success) {
+            statusDiv.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    ✅ Data berhasil dikirim!
+                </div>`;
+            form.reset();
+        } else {
+            statusDiv.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    ❌ Gagal mengirim data. Silakan coba lagi.
+                </div>`;
+        }
+    })
+    .catch(error => {
+        statusDiv.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                ⚠️ Terjadi kesalahan: ${error.message}
+            </div>`;
+    });
+});
+</script>
 
 </body>
 </html>
