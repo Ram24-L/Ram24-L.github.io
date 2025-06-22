@@ -88,7 +88,7 @@
 	            <a href="./index.php" class="navbar-brand">
 	                <img src="./assets/logo/logo.png" height="60" alt="logo" style="margin-bottom: 10px;">
 	            </a>
-				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR LIFE</h4>
+				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR Community</h4>
 
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -206,10 +206,6 @@
 								        		Blog post 
 								        	</a>
 								        </li>
-								        <li>
-								        	<a class="dropdown-item  home-text bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.php"> 	Author page 
-								        	</a>
-								        </li>
 								    </ul>
 								</div>
 	                        </li>
@@ -230,7 +226,7 @@
 
 	<!-- header body -->
 	<div class="overflow-hidden py-9 py-xl-10 position-relative">
-	   	<img src="./assets/img/bg/bg1.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+	   	<img id="logo" src="./assets/img/bg/logo-light.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
 
 	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
 	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -257,7 +253,7 @@
 			<div class="row gy-5 gx-xl-5 justify-content-between">
 				<div class="col-12 col-xl-8">
 					<div class="max-w-3xl mx-auto mx-xl-0 mt-4">
-						<a class="icon-link link-primary-emphasis icon-link-hover text-decoration-none" href="javascript:;" style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);">
+						<a class="icon-link link-primary-emphasis icon-link-hover text-decoration-none" href="blog.php" style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);">
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi fs-1 bi-arrow-left-short rtl-flip" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/> </svg>
 
 							<span class="fw-bold">
@@ -266,7 +262,7 @@
 						</a>
 
 						<h2 class="my-4 text-body-emphasis text-4xl tracking-tight fw-bold">
-							8 Manfaat Hujan Trofis
+							8 Manfaat Hujan Tropis
 						</h2>
 
 						<div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -319,7 +315,7 @@
 
 						<div class="mt-5">
 	                        <div class="ratio ratio-16x9" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
-	                            <img src="./assets/img/bg/4.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
+	                            <img src="./assets/img/bg/2.jpg" class="object-fit-cover rounded-3" alt="presentation" loading="lazy">
 	                        </div>
 	                    </div>
 
@@ -375,56 +371,69 @@
 
 				<!-- side bar -->
 				<div class="col-12 col-xl-4">
+					<div class="max-w-xl mx-auto mx-xl-0 pt-5 pt-xl-0">
+						<div class="mt-4">
+							<div class="p-4 shadow rounded-3 bg-body-tertiary">
+								<div class="input-group flex-nowrap input-group-lg">
+									<input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
+									<span class="input-group-text bg-primary text-light" id="addon-wrapping">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+											<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+										</svg>
+									</span>
+								</div>
+							</div>
+						</div>
 
 						<div class="mt-5">
 							<div class="p-4 shadow rounded-3 bg-body-tertiary">
 								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
-									Popular Posts
+									Popular Post
 								</h3>
 
 								<hr class="text-body-emphasis opacity-10">
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="raja_ampat.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg7.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
 
 									<div class="ps-3">
 										<time datetime="2024-09-16" class="d-block text-body-tertiary">
-			                                Sep 16, 2024
+			                                20 Juni 2025
 			                            </time>
 										<h6 class="m-0 mt-3 text-body-secondary line-clamp-2 text-sm leading-6">
-											The Tech Revolution: How Innovations Are Changing
+											#SaveRajaAmpat
 										</h6>
 									</div>
 								</a>
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="blog-post.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg8.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
 
 									<div class="ps-3">
 										<time datetime="2024-09-16" class="d-block text-body-tertiary">
-			                                Sep 16, 2024
+			                                18 Mei 2025
 			                            </time>
 										<h6 class="m-0 mt-3 text-body-secondary line-clamp-2 text-sm leading-6">
-											The Tech Revolution: How Innovations Are Changing
+										Aksi Bersih Pantai Bersama Radar
 										</h6>
 									</div>
 								</a>
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="page_binatang.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg9.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
 
 									<div class="ps-3">
 										<time datetime="2024-09-16" class="d-block text-body-tertiary">
-			                                Sep 16, 2024
+			                                11 September 2024
 			                            </time>
 										<h6 class="m-0 mt-3 text-body-secondary line-clamp-2 text-sm leading-6">
-											The Tech Revolution: How Innovations Are Changing
+											12 Binatang Kalimantan yang Terancam Punah
 										</h6>
 									</div>
 								</a>
@@ -442,22 +451,12 @@
 								<ul class="ps-3 text-body-secondary">
 									<li class="mt-2">
 										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
+											Ekosistem Darat
 										</a>
 									</li>
 									<li class="mt-2">
 										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
-										</a>
-									</li>
-									<li class="mt-2">
-										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
-										</a>
-									</li>
-									<li class="mt-2">
-										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
+											Ekosistem Darat & Laut
 										</a>
 									</li>
 								</ul>
@@ -485,15 +484,15 @@
 
 				<div class="px-6">
 					<div class="mx-auto max-w-2xl">
-						<h2 class="m-0 tracking-tight text-4xl fw-bold text-center home-text">
-							Reclaim Your Time. Experience Fresh.
+						<h2 class="m-0 home-text tracking-tight text-4xl fw-bold text-center">
+							Sign in for Radar Community now
 						</h2>
-						<p class="m-0 mt-4 text-lg leading-8 text-center home-text">
-							Let us handle your laundry, so you can focus on what matters.
+						<p class="m-0 mt-4 home-text text-lg leading-8 text-center">
+							Join and help our nature now
 						</p>
-						<div class="mt-4 pt-3 text-center home-text">
-							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold home-text">
-								Schedule Your Pickup
+						<div class="mt-4 pt-3 text-center">
+							<a href="index.php#myForm" class="btn btn-lg btn-primary home-text text-sm fw-semibold">
+								Join Now
 							</a>
 						</div>
 					</div>
@@ -504,7 +503,7 @@
 
 
 
-	<footer class="overflow-hidden py-6 py-sm-7 py-xl-6 bg-body-tertiary">
+		<footer class="overflow-hidden py-6 py-sm-7 py-xl-6 bg-body-tertiary">
 	    
 	    <div class="container">
 
@@ -530,7 +529,7 @@
 	            <div class="">
 	                <a href="./index.php" class="link-body-emphasis d-flex align-items-center text-decoration-none">
 	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
-						RADAR LIFE
+						RADAR Community
 	                </a>
 	            </div>
 
@@ -545,7 +544,6 @@
 	    </div>  
 	</footer>
 
-
 	<!-- Back to top button -->
 	<button type="button" class="btn btn-primary btn-back-to-top rounded-circle justify-content-center align-items-center p-2 text-white">
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16"> <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/> </svg>
@@ -558,6 +556,39 @@
 	<script src="./assets/libraries/glide/glide.min.js"></script>
 	<script src="./assets/libraries/aos/aos.js"></script>
 	<script src="./assets/js/scripts.js"></script>
+	<script>
+	const updateThemeImage = (theme) => {
+	const logo = document.getElementById("logo");
+	if (!logo) {
+		console.warn("Logo tidak ditemukan");
+		return;
+	}
+
+	// Tambahkan efek fade-out
+	logo.classList.add("fade-out");
+
+	setTimeout(() => {
+		// Ganti gambar setelah efek fade-out
+		logo.src = theme === "dark"
+		? "./assets/img/bg/logo-dark.jpg"
+		: "./assets/img/bg/logo-light.jpg";
+
+		// Setelah gambar berubah, tunggu sebentar lalu fade-in
+		logo.onload = () => {
+		logo.classList.remove("fade-out");
+		};
+	}, 300); // Sesuaikan dengan waktu transisi CSS
+	};
+
+
+	document.querySelectorAll('[data-bs-theme-value]').forEach(btn => {
+		btn.addEventListener('click', () => {
+		const theme = btn.getAttribute('data-bs-theme-value');
+		document.documentElement.setAttribute('data-bs-theme', theme);
+		updateThemeImage(theme);
+		});
+	});
+	</script>
 
 
 </body>

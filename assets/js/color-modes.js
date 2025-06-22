@@ -20,12 +20,16 @@
   }
 
   const setTheme = theme => {
-    if (theme === 'auto') {
-      document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-    } else {
-      document.documentElement.setAttribute('data-bs-theme', theme)
-    }
+  if (theme === 'auto') {
+    const autoTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-bs-theme', autoTheme);
+    updateThemeImage(autoTheme); // Tambahkan ini
+  } else {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    updateThemeImage(theme); // Tambahkan ini
   }
+}
+
 
   setTheme(getPreferredTheme())
 
@@ -55,7 +59,32 @@
     if (focus) {
       themeSwitcher.focus()
     }
+    updateThemeImage(theme);
+
   }
+ const updateThemeImage = (theme) => {
+  const logo = document.getElementById("logo");
+  if (!logo) return;
+
+  // Tambahkan efek fade-out
+  logo.classList.add("fade-out");
+
+  // Setelah 300ms (selama transisi), ganti src dan fade-in
+  setTimeout(() => {
+    if (theme === "dark") {
+      logo.src = "./assets/img/bg/logo-dark.jpg";
+    } else {
+      logo.src = "./assets/img/bg/logo-light.jpg";
+    }
+
+    // Setelah src diganti, tunggu sedikit sebelum menghapus fade-out
+    logo.onload = () => {
+      logo.classList.remove("fade-out");
+    };
+  }, 300); // waktu fade-out, sesuai CSS
+};
+
+
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
     const storedTheme = getStoredTheme()
@@ -66,14 +95,17 @@
 
   window.addEventListener('DOMContentLoaded', () => {
     showActiveTheme(getPreferredTheme())
+    updateThemeImage(getPreferredTheme());
 
     document.querySelectorAll('[data-bs-theme-value]')
       .forEach(toggle => {
         toggle.addEventListener('click', () => {
           const theme = toggle.getAttribute('data-bs-theme-value')
           setStoredTheme(theme)
+          console.log("Tombol Tema diklik:", theme)
           setTheme(theme)
           showActiveTheme(theme, true)
+          updateThemeImage(theme) 
         })
       })
   })

@@ -88,7 +88,7 @@
 	            <a href="./index.php" class="navbar-brand">
 	                <img src="./assets/logo/logo.png" height="60" alt="logo" style="margin-bottom: 10px;">
 	            </a>
-				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR LIFE</h4>
+				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR Community</h4>
 
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -206,10 +206,6 @@
 								        		Blog post 
 								        	</a>
 								        </li>
-								        <li>
-								        	<a class="dropdown-item  home-text bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.php"> 	Author page 
-								        	</a>
-								        </li>
 								    </ul>
 								</div>
 	                        </li>
@@ -230,7 +226,7 @@
 
 	<!-- header body -->
 	<div class="overflow-hidden py-9 py-xl-10 position-relative">
-	   	<img src="./assets/img/bg/bg1 (2).jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+	   	<img id="logo"src="./assets/img/bg/logo-light.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
 
 	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
 	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -457,7 +453,7 @@
 	            <div class="">
 	                <a href="./index.php" class="link-body-emphasis d-flex align-items-center text-decoration-none">
 	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
-						RADAR LIFE
+						RADAR Community
 	                </a>
 	            </div>
 
@@ -527,6 +523,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+</script>
+<script>
+  const updateThemeImage = (theme) => {
+  const logo = document.getElementById("logo");
+  if (!logo) {
+    console.warn("Logo tidak ditemukan");
+    return;
+  }
+
+  // Tambahkan efek fade-out
+  logo.classList.add("fade-out");
+
+  setTimeout(() => {
+    // Ganti gambar setelah efek fade-out
+    logo.src = theme === "dark"
+      ? "./assets/img/bg/logo-dark.jpg"
+      : "./assets/img/bg/logo-light.jpg";
+
+    // Setelah gambar berubah, tunggu sebentar lalu fade-in
+    logo.onload = () => {
+      logo.classList.remove("fade-out");
+    };
+  }, 300); // Sesuaikan dengan waktu transisi CSS
+};
+
+
+  document.querySelectorAll('[data-bs-theme-value]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-bs-theme-value');
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      updateThemeImage(theme);
+    });
+  });
 </script>
 
 </body>

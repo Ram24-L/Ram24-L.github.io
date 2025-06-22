@@ -3,7 +3,7 @@
 <head>
 
     <!-- Include JavaScript for color modes -->
-    <script src="./assets/js/color-modes.js"></script>
+    <script src="./assets/js/color-modes.js" defer></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,7 +88,7 @@
 	            <a href="./index.php" class="navbar-brand">
 	                <img src="./assets/logo/logo.png" height="60" alt="logo" style="margin-bottom: 10px;">
 	            </a>
-				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR LIFE</h4>
+				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR Community</h4>
 
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -206,10 +206,6 @@
 								        		Blog post 
 								        	</a>
 								        </li>
-								        <li>
-								        	<a class="dropdown-item  home-text bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.php"> 	Author page 
-								        	</a>
-								        </li>
 								    </ul>
 								</div>
 	                        </li>
@@ -230,7 +226,7 @@
 
 	<!-- header body -->
 	<div class="overflow-hidden position-relative">
-	   <img src="./assets/img/bg/bg1 (2).jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+	   <img  id="logo" src="./assets/img/bg/logo-light.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
 
 	   <div class="overlay position-absolute z-n1 top-0 h-100 w-100 bg-dark"
 	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -243,16 +239,17 @@
 		                <div class="mt-4 pt-2">
 		                    <div class="text-center text-xl-start">
 		                        <h1 class="m-0  home-text tracking-tight text-6xl fw-bold" data-aos-delay="0" data-aos="fade" data-aos-duration="3000">
-		                            Preserve Our Terrestrial Ecosystem
+		                            Lindungi Ekosistem Darat Kita
 		                        </h1>
 		                        <p class="m-0 mt-4  home-text text-lg leading-8" data-aos-delay="100" data-aos="fade" data-aos-duration="3000">
-		                            Join us in protecting land, forests, wildlife, and native plants<BR>ensuring a healthy planet for generations to come
+		                            Bergabunglah bersama kami dalam melindungi lahan, hutan, satwa liar, dan tumbuhan asli,
+demi memastikan planet yang sehat untuk generasi yang akan datang.
 		                        </p>
 		                        <div class="mt-4 pt-3 d-flex align-items-center justify-content-center justify-content-xl-start column-gap-3">
-		                            <a href="javascript:;" class="btn btn-lg btn-primary  home-text text-sm fw-semibold" data-aos-delay="200" data-aos="fade" data-aos-duration="3000">
+		                            <a href="contact.php" class="btn btn-lg btn-primary  home-text text-sm fw-semibold" data-aos-delay="200" data-aos="fade" data-aos-duration="3000">
 		                                Contact us
 		                            </a>
-		                            <a href="javascript:;" class="btn btn-lg  home-text icon-link icon-link-hover bg-body-secondary-hover text-sm leading-6 fw-semibold" data-aos-delay="300" data-aos="fade" data-aos-duration="3000">
+		                            <a href="#page" class="btn btn-lg  home-text icon-link icon-link-hover bg-body-secondary-hover text-sm leading-6 fw-semibold" data-aos-delay="300" data-aos="fade" data-aos-duration="3000">
 		                                Learn more 
 		                                <span class="bi align-self-start left-to-right" aria-hidden="true">→</span>
 		                                <span class="bi align-self-start right-to-left" aria-hidden="true">←</span>
@@ -268,7 +265,7 @@
 	            		<!-- Button trigger modal -->
 						<a class="video-play-button video-btn-modal position-relative" href="javascript:;"
 							data-bs-toggle="modal" data-bs-target="#videoModal"
-							data-bs-src="https://www.youtube.com/embed/EX0TcLgOPv0">
+							data-bs-src="https://www.youtube.com/embed/KfjIaEP0EtY">
 							<span class="top-50 start-50 translate-middle"></span>
 						</a>
 	            	</div>
@@ -303,7 +300,7 @@
 	    <div class="container">
 	        <div>
 	            <div class="mx-auto max-w-2xl text-center">
-					<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold">
+					<h2 class="m-0 text-primary-emphasis text-base leading-7 fw-semibold" id="page">
 						"Why Should We ? "
 					</h2>
 	                <p class="m-0 mt-2 text-body-emphasis text-4xl tracking-tight fw-bold">
@@ -891,7 +888,7 @@ Gambar saran: Ilustrasi voting, kampanye, atau anak muda membawa poster lingkung
 	            <div class="">
 	                <a href="./index.php" class="link-body-emphasis d-flex align-items-center text-decoration-none">
 	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
-						RADAR LIFE
+						RADAR Community
 	                </a>
 	            </div>
 
@@ -957,6 +954,40 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
             </div>`;
     });
 });
+
+</script>
+<script>
+  const updateThemeImage = (theme) => {
+  const logo = document.getElementById("logo");
+  if (!logo) {
+    console.warn("Logo tidak ditemukan");
+    return;
+  }
+
+  // Tambahkan efek fade-out
+  logo.classList.add("fade-out");
+
+  setTimeout(() => {
+    // Ganti gambar setelah efek fade-out
+    logo.src = theme === "dark"
+      ? "./assets/img/bg/logo-dark.jpg"
+      : "./assets/img/bg/logo-light.jpg";
+
+    // Setelah gambar berubah, tunggu sebentar lalu fade-in
+    logo.onload = () => {
+      logo.classList.remove("fade-out");
+    };
+  }, 300); // Sesuaikan dengan waktu transisi CSS
+};
+
+
+  document.querySelectorAll('[data-bs-theme-value]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-bs-theme-value');
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      updateThemeImage(theme);
+    });
+  });
 </script>
 
 </body>

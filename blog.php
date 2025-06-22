@@ -88,7 +88,7 @@
 	            <a href="./index.php" class="navbar-brand">
 	                <img src="./assets/logo/logo.png" height="60" alt="logo" style="margin-bottom: 10px;">
 	            </a>
-				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR LIFE</h4>
+				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR Community</h4>
 
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -206,10 +206,6 @@
 								        		Blog post 
 								        	</a>
 								        </li>
-								        <li>
-								        	<a class="dropdown-item  home-text bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.php"> 	Author page 
-								        	</a>
-								        </li>
 								    </ul>
 								</div>
 	                        </li>
@@ -230,7 +226,7 @@
 
 	<!-- header body -->
 	<div class="overflow-hidden py-9 py-xl-10 position-relative">
-	   	<img src="./assets/img/bg/bg1 (2).jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
+	   	<img id="logo"src="./assets/img/bg/logo-light.jpg" class="position-absolute z-n1 top-0 h-100 w-100 object-fit-cover" alt="Meeting">
 
 	   	<div class="position-absolute z-n1 top-0 h-100 w-100 bg-dark"
 	        style="opacity: 0.85; mix-blend-mode: multiply; filter: contrast(1.15) brightness(0.85);">
@@ -276,7 +272,7 @@
 
 		                        <div class="position-relative">
 		                            <h3 class="m-0 mt-3 text-lg leading-6 fw-semibold">
-		                                <a href="javascript:;" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
+		                                <a href="raja_ampat.php" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
 		                                    Save Raja Ampat
 		                                </a>
 		                            </h3>
@@ -298,7 +294,7 @@
 
 		                        <div class="mt-4 d-flex align-items-center column-gap-3 text-xs">
 		                            <time datetime="2024-09-16" class="text-body-tertiary">
-		                                18 Mei, 2025
+		                                18 Mei 2025
 		                            </time>
 		                            <a href="javascript:;" class="px-3 py-2 text-body-secondary bg-body-tertiary position-relative z-1 rounded-pill text-decoration-none fw-medium">
 		                                Ekosistem Darat & Laut
@@ -307,7 +303,7 @@
 
 		                        <div class="position-relative">
 		                            <h3 class="m-0 mt-3 text-lg leading-6 fw-semibold">
-		                                <a href="javascript:;" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
+		                                <a href="blog-post.php" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
 		                                    Aksi Bersih Pantai Bersama Radar
 		                                </a>
 		                            </h3>
@@ -324,13 +320,13 @@
 		                    <article class="d-flex max-w-xl mx-auto mx-xl-0 flex-column align-items-start justify-content-between">
 		                        <div class="position-relative w-100">
 		                            <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
-		                                <img src="./assets/img/bg/bg4.jpg" class="object-fit-cover rounded-3" alt="Blog image" loading="lazy">
+		                                <img src="./assets/img/bg/binatang.webp" class="object-fit-cover rounded-3" alt="Blog image" loading="lazy">
 		                            </div>
 		                        </div>
 
 		                        <div class="mt-4 d-flex align-items-center column-gap-3 text-xs">
 		                            <time datetime="2024-09-16" class="text-body-tertiary">
-		                                Sep 11, 2024
+		                                11 September 2024
 		                            </time>
 		                            <a href="javascript:;" class="px-3 py-2 text-body-secondary bg-body-tertiary position-relative z-1 rounded-pill text-decoration-none fw-medium">
 		                                Ekosistem Darat
@@ -339,7 +335,7 @@
 
 		                        <div class="position-relative">
 		                            <h3 class="m-0 mt-3 text-lg leading-6 fw-semibold">
-		                                <a href="javascript:;" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
+		                                <a href="page_binatang.php" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
 		                                    12 Binatang Kalimantan yang Terancam Punah
 		                                </a>
 		                            </h3>
@@ -356,13 +352,13 @@
 		                    <article class="d-flex max-w-xl mx-auto mx-xl-0 flex-column align-items-start justify-content-between">
 		                        <div class="position-relative w-100">
 		                            <div class="ratio" style="--bs-aspect-ratio: 66.66%;">
-		                                <img src="./assets/img/bg/bg5.jpg" class="object-fit-cover rounded-3" alt="Blog image" loading="lazy">
+		                                <img src="./assets/img/bg/2.jpg" class="object-fit-cover rounded-3" alt="Blog image" loading="lazy">
 		                            </div>
 		                        </div>
 
 		                        <div class="mt-4 d-flex align-items-center column-gap-3 text-xs">
 		                            <time datetime="2024-09-16" class="text-body-tertiary">
-		                                Sep 16, 2024
+		                                16 Septmber 2024
 		                            </time>
 		                            <a href="javascript:;" class="px-3 py-2 text-body-secondary bg-body-tertiary position-relative z-1 rounded-pill text-decoration-none fw-medium">
 		                                Ekosistem Darat
@@ -371,7 +367,7 @@
 
 		                        <div class="position-relative">
 		                            <h3 class="m-0 mt-3 text-lg leading-6 fw-semibold">
-		                                <a href="javascript:;" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
+		                                <a href="manfaat.php" class="text-body-emphasis text-body-secondary-hover text-decoration-none stretched-link">
 		                                    8 Manfaat Hutan Hujan Tropis
 		                                </a>
 		                            </h3>
@@ -405,12 +401,12 @@
 						<div class="mt-5">
 							<div class="p-4 shadow rounded-3 bg-body-tertiary">
 								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
-									Popular Posts
+									Popular Post
 								</h3>
 
 								<hr class="text-body-emphasis opacity-10">
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="raja_ampat.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg7.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
@@ -425,7 +421,7 @@
 									</div>
 								</a>
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="blog-post.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg8.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
@@ -440,7 +436,7 @@
 									</div>
 								</a>
 
-								<a href="javascript:;" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
+								<a href="page_binatang.php" class="d-flex align-items-center mt-4 text-body link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover">
 									<div class="p-5 position-relative">
 										<img src="./assets/img/bg/bg9.jpg" class="position-absolute top-0 start-0 h-100 w-100 object-fit-cover rounded" loading="lazy" alt="Meeting">
 									</div>
@@ -468,60 +464,19 @@
 								<ul class="ps-3 text-body-secondary">
 									<li class="mt-2">
 										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
+											Ekosistem Darat
 										</a>
 									</li>
 									<li class="mt-2">
 										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
-										</a>
-									</li>
-									<li class="mt-2">
-										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
-										</a>
-									</li>
-									<li class="mt-2">
-										<a href="javascript:;" class="text-body-secondary link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-25-hover text-sm leading-6">
-											Artificial Intelligence
+											Ekosistem Darat & Laut
 										</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="mt-5">
-							<div class="p-4 shadow rounded-3 bg-body-tertiary">
-								<h3 class="text-body-emphasis text-2xl tracking-tight fw-semibold">
-									Popular Tags
-								</h3>
-								<hr class="text-body-emphasis opacity-10">
 
-								<div class="d-flex flex-wrap gap-3">
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										AI
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										Ecommerce
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										IoT
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										Blockchain
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										Patient
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										Smart Home
-									</button>
-									<button class="btn text-body-tertiary border bg-body-secondary-hover text-sm fw-semibold">
-										Robotics
-									</button>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -542,15 +497,15 @@
 
 				<div class="px-6">
 					<div class="mx-auto max-w-2xl">
-						<h2 class="m-0 tracking-tight text-4xl fw-bold text-center">
-							Reclaim Your Time. Experience Fresh.
+						<h2 class="m-0 home-text tracking-tight text-4xl fw-bold text-center">
+							Sign in for Radar Community now
 						</h2>
-						<p class="m-0 mt-4 text-lg leading-8 text-center">
-							Let us handle your laundry, so you can focus on what matters.
+						<p class="m-0 mt-4 home-text text-lg leading-8 text-center">
+							Join and help our nature now
 						</p>
 						<div class="mt-4 pt-3 text-center">
-							<a href="javascript:;" class="btn btn-lg btn-primary text-white text-sm fw-semibold">
-								Schedule Your Pickup
+							<a href="index.php#myForm" class="btn btn-lg btn-primary home-text text-sm fw-semibold">
+								Join Now
 							</a>
 						</div>
 					</div>
@@ -587,7 +542,7 @@
 	            <div class="">
 	                <a href="./index.php" class="link-body-emphasis d-flex align-items-center text-decoration-none">
 	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
-						RADAR LIFE
+						RADAR Community
 	                </a>
 	            </div>
 
@@ -616,7 +571,39 @@
 	<script src="./assets/libraries/glide/glide.min.js"></script>
 	<script src="./assets/libraries/aos/aos.js"></script>
 	<script src="./assets/js/scripts.js"></script>
+	<script>
+	const updateThemeImage = (theme) => {
+	const logo = document.getElementById("logo");
+	if (!logo) {
+		console.warn("Logo tidak ditemukan");
+		return;
+	}
 
+	// Tambahkan efek fade-out
+	logo.classList.add("fade-out");
+
+	setTimeout(() => {
+		// Ganti gambar setelah efek fade-out
+		logo.src = theme === "dark"
+		? "./assets/img/bg/logo-dark.jpg"
+		: "./assets/img/bg/logo-light.jpg";
+
+		// Setelah gambar berubah, tunggu sebentar lalu fade-in
+		logo.onload = () => {
+		logo.classList.remove("fade-out");
+		};
+	}, 300); // Sesuaikan dengan waktu transisi CSS
+	};
+
+
+	document.querySelectorAll('[data-bs-theme-value]').forEach(btn => {
+		btn.addEventListener('click', () => {
+		const theme = btn.getAttribute('data-bs-theme-value');
+		document.documentElement.setAttribute('data-bs-theme', theme);
+		updateThemeImage(theme);
+		});
+	});
+	</script>
 
 
 </body>

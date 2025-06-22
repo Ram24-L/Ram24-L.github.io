@@ -17107,3 +17107,19 @@ fieldset:disabled .btn {
 .text-justify{
   text-align: justify;
 }
+
+#logo {
+  transition: opacity 300ms ease;
+  opacity: 1;
+}
+
+#logo.fade-out {
+  opacity: 0;
+}
+#logo {
+  transition: opacity 100ms ease, transform 100ms ease;
+}
+#logo.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+}

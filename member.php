@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	            <a href="./index.php" class="navbar-brand">
 	                <img src="./assets/logo/logo.png" height="60" alt="logo" style="margin-bottom: 10px;">
 	            </a>
-				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR LIFE</h4>
+				<h4 class="px-1 home-text  rounded-3 text-base leading-6 fw-semibold" style="margin-top: 10px; font-size: 24px;">RADAR Community</h4>
 
 	            <div class="dropdown ms-3 order-last">
 	                <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -247,10 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
 								        		Blog post 
 								        	</a>
 								        </li>
-								        <li>
-								        	<a class="dropdown-item  home-text bg-body-secondary-hover py-2 text-base leading-6 fw-semibold" href="./blog-author.php"> 	Author page 
-								        	</a>
-								        </li>
 								    </ul>
 								</div>
 	                        </li>
@@ -359,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	            <div class="">
 	                <a href="./index.php" class="link-body-emphasis d-flex align-items-center text-decoration-none">
 	                    <img src="./assets/logo/logo.png" height="24" alt="logo" loading="lazy">
-						RADAR LIFE
+						RADAR Community
 	                </a>
 	            </div>
 
