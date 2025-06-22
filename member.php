@@ -27,9 +27,9 @@
         Be careful if you change the site.webmanifest file, as you need to update the src attribute of the icons array to match the new path of your icon files. Otherwise, your icons may not display correctly on some devices. 
     -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/favicon-16x16.png">
-	<link rel="icon" type="image/x-icon" href="./assets/logo/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/logo.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/logo.png">
+	<link rel="icon" type="image/x-icon" href="./assets/logo/logo.png">
 	<link rel="manifest" href="./assets/logo/site.webmanifest">
 
     <!-- Stylesheets -->
