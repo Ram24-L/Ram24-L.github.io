@@ -17104,3 +17104,6 @@ fieldset:disabled .btn {
 .home-text{
   color: #F7FFF4;
 }
+.text-justify{
+  text-align: justify;
+}
